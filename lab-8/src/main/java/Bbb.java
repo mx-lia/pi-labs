@@ -12,10 +12,9 @@ public class Bbb extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         Enumeration<String> headerNames = request.getHeaderNames();
         PrintWriter pw = response.getWriter();
-        pw.println("Headers from Servlet Bbb: ");
+        pw.println("<h2>Headers from Servlet Aaa: </h2>");
 
         while (headerNames.hasMoreElements()) {
             String key = headerNames.nextElement();
@@ -23,8 +22,7 @@ public class Bbb extends HttpServlet {
             pw.println(key + ": " + value);
         }
 
-        pw.println();
-        pw.println("Query params from Servlet Aaa:");
+        pw.println("<h2>Query params from Servlet Aaa: </h2>");
         pw.println("param1: " + request.getParameter("param1"));
         pw.println("param2: " + request.getParameter("param2"));
         pw.println("param3: " + request.getParameter("param3"));

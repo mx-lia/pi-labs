@@ -1,0 +1,33 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+
+  <context-param>
+    <param-name>mailHost</param-name>
+    <param-value>smtp.yandex.ru</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mailPort</param-name>
+    <param-value>587</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mailHostInbox</param-name>
+    <param-value>imap.yandex.ru</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mailPortInbox</param-name>
+    <param-value>993</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mailUsername</param-name>
+    <param-value>test.mx-lia@yandex.by</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mailPassword</param-name>
+    <param-value>Pa$$w0rd</param-value>
+  </context-param>
+</web-app>

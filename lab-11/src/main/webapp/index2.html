@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+    <script type="text/javascript">
+        var req = crReq();
+
+        function Fill(req){
+            var xmldoc = req.responseXML;
+            var tsnum = xmldoc.getElementsByTagName("num");
+            var rc = "";
+            for (var i = 0; i < tsnum.length; i++){
+                rc += tsnum[i].innerHTML+" ";
+            }
+            return (rc);
+        };
+
+        function OnClick_XML(n, s){
+            var patern = new RegExp(/^[1-9]+[0-9]*$/);
+            if (patern.test(n)){
+                if (req){
+                    req.open("POST","http://localhost:8081/lab_11_war/Sss_XML", true);
+                    req.onreadystatechange = function(){
+                        if (req.readyState == 4){
+                            if (req.status == 200){
+                                s.firstChild.data = Fill(req);
+                                s.className ="h1";
+                            }else alert("status = "+
+                                req.status +"\n"+req.statusText);
+                        }
+                    };
+                    req.setRequestHeader("XRand-N",  n)
+                    req.send("null");
+                }
+            }else alert ("error");
+        };
+
+        function crReq(){
+            //alert( "crReq");
+            var req = null;
+            if (window.XMLHttpRequest)
+            {
+                req = new XMLHttpRequest();
+                //alert( "req = XMLHttpRequest");
+            }
+            else if (window.ActiveXObject)
+            {
+                try{
+                    req = new ActiveXObject("Msxml2.XMLHTTP");
+                    //alert( "req = Msxml2.XMLHTTP");
+                }catch(e){
+                    try{
+                        req = new ActiveXObject("Microsoft.XMLHTTP");
+                        //alert( "req = Microsoft.XMLHTTP");
+                    }catch(e){
+                        req = null;
+                        //alert( "req = null");
+                    }
+                }
+            }
+            return req;
+        }
+    </script>
+</head>
+<body>
+<b>Task 2</b>
+<form name="FXML" action="#" method="post">
+    <input name="n" type="text" value="0" size="2" maxlength="2" />
+    <input name="BRand" value="Rand" type="button" size="10" maxlength="10" onclick="OnClick_XML(this.form.n.value, document.getElementById('xml'))" />&emsp;
+    <span id="xml" class="h2">.....</span>
+</form>
+</body>
+</html>

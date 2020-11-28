@@ -30,8 +30,8 @@
     </form>
 </div>
 
-<%--<%@ include file="afternoon.jsp" %>--%>
-<jsp:include page="afternoon.jsp"></jsp:include>
+<%@ include file="afternoon.jsp" %>
+<%--<jsp:include page="afternoon.jsp"></jsp:include>--%>
 <%--<jsp:forward page="afternoon.jsp"></jsp:forward>--%>
 <div style="margin: 10px 0px;">
     <a href="Afternoon">AFTERNOON</a>

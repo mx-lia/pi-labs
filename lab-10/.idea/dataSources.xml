@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="students" uuid="9963a5e4-340b-49e5-ab18-ada043ed28b9">
-      <driver-ref>sqlserver.jtds</driver-ref>
+    <data-source source="LOCAL" name="schooldb@localhost" uuid="17262802-f28a-467a-8793-eca7156ad629">
+      <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:jtds:sqlserver://./students;instance=&lt;pipe name&gt;;namedPipe=true</jdbc-url>
-      <jdbc-additional-properties>
-        <property name="LOCAL_DB_INSTANCE" value="MSSQLLocalDB" />
-        <property name="LOCAL_DB_EXECUTABLE" value="C:\Program Files\Microsoft SQL Server\130\Tools\Binn\SqlLocalDB.exe" />
-      </jdbc-additional-properties>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost\SQLEXPRESS:1434;database=schooldb</jdbc-url>
     </data-source>
   </component>
 </project>
